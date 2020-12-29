@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia : Edit the entry {{ title }} 
+{% endblock %}
+
+{% block body %}
+	<h1>{{ title }}</h1>
+	<form action="{% url 'edit_entry' %}" method="post">
+		{% csrf_token %}
+		{{ form.entry_title.as_hidden }}
+		{{ form.entry_content }}
+		
+		<input type="submit" class="btn btn-primary">
+	</form>
+    <a href="{{ title }}" class="btn btn-info">View entry</a>
+
+{% endblock %}

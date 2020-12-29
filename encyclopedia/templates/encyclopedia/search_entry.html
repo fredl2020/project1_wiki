@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia : Results page
+{% endblock %}
+
+{% block body %}
+	<h1>Results page of your query "{{ result_title }}"</h1>
+    <div>
+    	<ul>
+        	{% for result_query in result_queries %}
+            <li><a href="{{ result_query }}">{{ result_query }}</a></li>
+       		{% endfor %}
+    	</ul>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia : Add a new entry
+{% endblock %}
+
+{% block body %}
+	<h1>Add Entry in the wiki</h1>
+    <div id="add">
+    	{% if messages %}
+			<ul class="messages">
+			    {% for message in messages %}
+			    <li class="alert alert-danger">{{ message }}</li>
+			    {% endfor %}
+			</ul>
+		{% endif %}
+    	<form action="{% url 'add_entry' %}" method="post">
+    		{% csrf_token %}
+    		{{ form }}
+    		<input type="submit" class="btn btn-primary">
+    	</form>
+    	<a href="{% url 'index' %}" class="btn btn-info">View all entries</a>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia : ERROR 404, entry not found !
+{% endblock %}
+
+{% block body %}
+	<h1>ERROR 404, this entry was not found !</h1>
+    <div>Please <a href="{% url 'index' %}">try something else</a></div>
+
+{% endblock %}
