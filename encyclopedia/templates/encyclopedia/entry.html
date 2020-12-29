@@ -5,8 +5,7 @@
 {% endblock %}
 
 {% block body %}
-	<h1>{{title}}</h1>
-    <div>{{content}}</div>
+    <div>{{content |safe}}</div>
     <a href="{% url 'edit_entry' %}?title={{ title }}" class="btn btn-info" >Edit entry</a>
 
 {% endblock %}

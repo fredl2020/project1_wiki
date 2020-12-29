@@ -5,6 +5,7 @@ from django.contrib import messages
 from re import search
 from . import util
 import random
+import markdown2
 
 
 
@@ -24,7 +25,7 @@ def index(request):
 def entry(request, title):
 	if util.get_entry(title):
 	    return render(request, "encyclopedia/entry.html", {
-	        "content": util.get_entry(title),
+	        "content": markdown2.markdown(util.get_entry(title)),
 	        "title": title
 	    })
 	elif title == "search_entry": 
