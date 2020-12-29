@@ -99,6 +99,7 @@ def randomized_entry(request):
 
 """
 	View to displays the page to edit an entry
+	We need to use again the form to display entry datas to edit
 """
 def edit_entry(request):
 	title = request.GET.get('title', '')
